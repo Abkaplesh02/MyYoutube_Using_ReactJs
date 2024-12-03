@@ -1,11 +1,22 @@
+import { useDispatch } from "react-redux";
+import { toogleMenu } from "../utils/appSlice";
+
 const Head = () =>{
+
+    const dispatch =useDispatch();
+
+    const toggleMenuHandler =  ()=>{
+        dispatch(toogleMenu());
+    }
+
+   
     return (
         <div className="grid grid-flow-col p-5 m-2 shadow-2xl">
 
         {/* This is youtube logo and hamburger menu */}
         <div className="flex col-span-1 ">
-            <img className="h-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/800px-Hamburger_icon.svg.png" alt="Menu" />
-            <img className="h-8 mx-2" src="https://cdn.worldvectorlogo.com/logos/youtube-6.svg" alt="Youtube Logo" />
+            <img onClick={toggleMenuHandler} className="h-8 cursor-pointer" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/800px-Hamburger_icon.svg.png" alt="Menu" />
+         <a href="">  <img className="h-8 mx-2" src="https://cdn.worldvectorlogo.com/logos/youtube-6.svg" alt="Youtube Logo" /></a> 
         </div>
 
 
